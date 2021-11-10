@@ -1,0 +1,16 @@
+.section-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 50px;
+    font-weight: 100;
+    margin-bottom: 50px;
+    margin-left: -50%;
+}
+.maincontent-area {
+    padding-bottom: 50px;
+    padding-top: 20px;
+    margin-left: 10%;
+}
+.form-group1 {
+    margin-bottom: 1rem;
+    margin-left: 16.5%;
+}

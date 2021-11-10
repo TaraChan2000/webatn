@@ -1,0 +1,15 @@
+#header ul.navigation li a{
+    text-decoration:none;
+	color:#2c1d00;
+	font-family:"Myriad Pro";
+	font-size:17px;
+	font-weight:bold;
+	display:inline-block; 
+	line-height:35px;
+	background:url("");
+	background-repeat:no-repeat;
+	background-position:right; 
+	height:35px;
+	padding:0 20px 0 20px;
+	text-align:center;
+}

@@ -1,0 +1,459 @@
+ /** Website template by freewebsitetemplates.com **/
+ body { 
+      margin:0;
+			padding:0;
+			background: url("../images/bg-body.gif");
+			background-repeat:repeat-x;
+ }	
+ 
+#header {
+    width: 1000px;
+    height: 72px;
+    position: relative;
+    margin: 0 auto;
+}
+		
+  #header a#logo{
+     position:relative;
+	 z-index:100;
+  }		
+  #header {
+    width: 960px;
+    height: 90px;
+    position: relative;
+    margin: 0 auto;
+}
+  
+  #header a#logo img{
+    border:0; 
+  }
+  
+  /**-------------- Navigation style ---------------**/
+  #header ul.navigation{
+      list-style-type:none;
+	  margin:-61px 0 0 250px;
+	  padding:0;
+	  overflow:hidden;
+	  
+  }
+  
+  #header ul.navigation li {
+    float: left;
+    height: 35px;
+    width: 90px;
+}
+  
+  #header ul.navigation li.active{
+	  background-repeat:no-repeat;
+	  background-position: 0 -160px;
+  }
+  
+  #header ul.navigation li a{
+  text-decoration:none;
+	color:#2c1d00;
+	font-family:"Myriad Pro";
+	font-size:17px;
+	font-weight:bold;
+	display:inline-block; 
+	line-height:35px;
+	background:url("");
+	background-repeat:no-repeat;
+	background-position:right; 
+	height:35px;
+	padding:0 20px 0 20px;
+	text-align:center;
+	
+  }
+  
+  #header ul.navigation li a:hover{
+	color:#ffffff;
+  }
+  #slideshow {
+    overflow: hidden;
+    height: 360px;
+    width: 900px;
+    margin: 0 auto;
+}
+
+.slide-wrapper {
+    width: 900px;
+    -webkit-animation: slide 10s ease infinite;
+}
+
+.slide {
+    float: left;
+    height: 360px;
+    width: 900px;
+}
+
+@-webkit-keyframes slide {
+    20% {
+        margin-left: 0px;
+    }
+    30% {
+        margin-left: 100%;
+    }
+    50% {
+        margin-left: 100%;
+    }
+    60% {
+        margin-left: 100%;
+    }
+    80% {
+        margin-left: -1800px;
+    }
+  }
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+  /**------------- Start of body style ----------------**/
+  #body div.banner {
+	background:url("../images/cat.back.png");
+	background-position:center;
+	background-repeat:no-repeat;
+	height:606px;
+}
+
+#body .content1{
+    margin-right: 15px;
+    padding-bottom: 7.5px;
+    border-bottom: 2px solid rgba(0,0,0,.1);
+    margin-bottom: -2px;
+}
+
+  #body div#content{
+    width:1020px;
+	margin:0 auto;
+	overflow:hidden;
+	background-image:none;
+	height:auto;
+	overflow:hidden;
+  }
+  #auto-zoom {
+	width: 200px;
+	height: 200px;
+	padding-top: 5%;
+	padding-bottom: 20%;
+  }
+  
+  #auto-zoom:hover {
+
+	width: 200px;
+	height: 200px;
+	transition: 1s;
+  }
+  
+  #body div#content .content{
+    float:left; 
+	width:1020px;
+	margin-right:20px;
+	background-image:none;
+	height:auto;
+	overflow:hidden;
+  }
+  
+  #body #content .content h2{
+	
+	font-family: "Myriad Pro";
+    margin: 80px 0 0 30px;
+  }
+  
+  
+  #body #content .content ul{
+     margin:0;
+	 padding:0;
+	 list-style-type:none;
+	 
+  }
+  
+  #body #content .content ul li {
+    width: 200px;
+    border: 1px solid black;
+    padding: 10px 10px;
+    margin: 20px 5px 20px 10px;
+    float: left;
+    line-height: 20px;
+    height: 300px;
+}
+#address{
+  width: 200px;
+  border: 2px solid rgb(145, 125, 125);
+  padding: 10px 10px;
+  margin: -1002px 10px 10px 661px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  float: left;
+  line-height: 20px;
+  height: 302px;
+}
+ul li a{
+  color: #7F7154;
+  text-decoration: none;
+  list-style: disc;
+}
+#address ul li {
+  list-style: disc;
+}
+  
+  #body #content .content ul li span{
+     display:block;
+  }    
+  #body #content .content ul li span a{
+    color: #7F7154;
+    font-family: "Myriad Pro";
+    font-size: 14px;
+	text-decoration:none;
+  }
+  #body #content .content ul li span a:hover{
+    color: #000000; 
+  }
+  
+  
+  #body #content .content ul li span a.more{
+     text-decoration:none;
+	 color:#FFAD00; 
+  }
+  
+  
+  #body #content .content ul li span a.more:hover{
+     text-decoration:none;
+	 color:#ff6600;
+  }
+  
+  #body #content .content ul li a{
+     text-decoration:none;
+  }
+  
+  #body #content .content ul li a:hover{
+    color:#F8F3E9;
+  }
+  
+  #body #content .content ul li a.more{
+     text-decoration:none;
+	 color:#FFAD00; 
+  }
+  
+  #body #content .content ul li a.more:hover{
+     text-decoration:none;
+	 color:#ff6600;
+  }
+   
+  #body #content .content ul li h2{
+    font-family:"Myriad Pro";
+    font-size:20px;
+	margin:0;
+	
+	}
+   
+  #body #content .content ul li  p{
+    font-family:"Myriad Pro";
+	font-size:14px;
+	text-align:justify; 
+	color:#7f7154;
+	margin:10;
+  }
+  
+  #body #content .content ul li  p a{
+    color:#FF9E01;
+  }
+  #body #content .content ul li  p a:hover{
+    color:#7f7154;
+  }
+  
+  #body #content .content ul li img{
+    border:0;
+	float:left;
+	margin-right:10px;
+  }
+  #body #content3 .content ul li {
+    width: 160px;
+    border: 1px solid black;
+    padding: 10px 10px;
+    margin: 20px 5px 20px 10px;
+    float: left;
+    line-height: 20px;
+    height: 310px;
+}
+  /**----------- Start of Pet Mart Page Style ----------**/
+  #auto-zoom1 {
+	width: 170px;
+	height: 170px;
+	padding-top: 5%;
+	padding-bottom: 20%;
+  }
+  
+  #auto-zoom1:hover {
+	width: 180px;
+	height: 180px;
+	transition: 1s;
+  }
+  #auto-zoom0 {
+    width: 170px;
+    height: 170px;
+    padding-top: 5%;
+    padding-bottom: 20%;
+    }
+    
+    #auto-zoom0:hover {
+    width: 180px;
+    height: 180px;
+    transition: 1s;
+    }
+  #body #Food0 .Food0 ul li {
+    text-decoration: none;
+    width: 200px;
+    border: 1px solid black;
+    padding: 10px 10px;
+    margin: 20px 5px 20px 10px;
+    float: left;
+    line-height: 20px;
+    height: 305px;
+}
+ul li {
+    list-style: none;
+}
+#border-down0 .Font{
+    margin-right: 15px;
+    padding-bottom: 3px;
+    margin-bottom: -2px;
+    margin-left:5%;
+}
+
+#border-down0{
+	border-bottom: 2px solid gray;
+	padding-top: 5%;
+}
+#border-down1 .Font1{
+    margin-right: 15px;
+    padding-bottom: 3px;
+    margin-bottom: -2px;
+    margin-left:5%;
+}
+
+#border-down1{
+	border-bottom: 2px solid gray;
+	margin-top: 70%;
+}
+#body #Food1 .Food1 ul li {
+  text-decoration: none;
+  width: 200px;
+  border: 1px solid black;
+  padding: 10px 10px;
+  margin: 20px 5px 20px 10px;
+  float: left;
+  line-height: 20px;
+  height: 305px;
+}
+#Petfood {
+  border: 2px;
+  PADDING: 50px;
+  margin: 20px;
+}
+li {
+  list-style-type: none;
+}
+h2 {
+  font-size: 40px;
+}
+  /**------------ Start of About page style  -------------**/
+  
+  #body #content .content .about{
+    width:640px; 
+	height:auto;
+	overflow:hidden;
+  }
+  
+  #body #content .content .about h2{
+    margin:80px 0 0 30px;
+	
+    font-family: "Myriad Pro";
+  }
+  
+  #body #content .content .about ul{
+     margin:0;
+	 padding:0;
+	 list-style-type:none;
+  }  
+  
+   #body #content .content .about ul li{
+		clear:both;
+		width:600px;
+		padding:20px 10px 0 30px; 
+  }  
+  #body #content .content .about ul li h2{
+      margin:0;
+	  padding:0;
+	  font-weight:normal;
+  }
+  #body #content .content .about ul li h2 a{
+    color:#ff9506;
+	font-size:24	px;
+	font-family: "Myriad Pro";
+	text-decoration:none;
+  } 
+  
+  #body #content .content .about ul li h2 a:hover{
+   color: #7F7154;
+  }
+  
+  #body #content .content .about ul li p{
+    color: #7F7154;
+    font-family: "Myriad Pro";
+    font-size: 14px;
+    text-align: justify;
+  }	
+  
+  #body #content .content .about ul li p span{
+     display:block;
+  }
+  
+  #body #content .content .about ul li p a{
+     color:#000000;
+	 text-decoration:underline;
+  }
+  
+  #body #content .content .about ul li p a:hover{
+    color:#7F7154;
+  }
+  #Pet{
+	color: #7F7154;
+    font-family: "Myriad Pro";
+    font-size: 14px;
+    text-align: justify;
+	margin:920px 20px 10px 20px;
+	border: 2px solid rgb(145, 125, 125);
+	padding: 20px;
+  }
+#Pet {
+    list-style: none;
+}
+  /**------------ End of About page style  -------------**/
+ 
