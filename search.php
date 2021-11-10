@@ -8,8 +8,8 @@
 		echo "Sorry this Product doesn't exist";
 		die();
 	}else{
-		$result= mysqli_query($conn,"SELECT * from public.product where productname LIKE '%".$search."%'");
-	if(mysqli_num_rows($result) ==0){
+		$result= pg_query($conn,"SELECT * from public.product where productname LIKE '%".$search."%'");
+	if(pg_num_rows($result) ==0){
 		echo "Sorry this Product doesn't exist";
 	}
     elseif ($result) {
@@ -38,7 +38,7 @@
 			<tbody>
 				<?php
 				$No=1;
-				while($row=mysqli_fetch_array($result,MYSQLI_ASSOC)){	
+				while($row=pg_fetch_array($result,NULL,PGSQL_ASSOC)){	
 				?>
 				<tr>
 				<td ><?php echo $No; ?></td>

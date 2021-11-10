@@ -11,8 +11,8 @@
     
                include_once("connection.php");
                $No=1;
-               $result = mysqli_query($conn, "SELECT * FROM public.category");
-               while($row=mysqli_fetch_array($result, MYSQLI_ASSOC))
+               $result = pg_query($conn, "SELECT * FROM public.category");
+               while($row=pg_fetch_array($result, NULL,PGSQL_ASSOC))
                {
             ?>
 			<tr>

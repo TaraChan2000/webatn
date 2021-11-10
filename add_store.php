@@ -23,11 +23,11 @@
 				echo "<ul>$err</ul>";
 			}
 			else{
-				$sq = "SELECT * from store where store_id='$id' or store_name='$name'";
-				$result = mysqli_query($conn,$sq);
-				if(mysqli_num_rows($result)==0)
+				$sq = "SELECT * from public.store where store_id='$id' or store_name='$name'";
+				$result = pg_query($conn,$sq);
+				if(pg_num_rows($result)==0)
 				{
-					mysqli_query($conn, "INSERT INTO store (store_id, store_name, store_des, store_address) VALUES ('$id','$name','$des', '$addr')");
+					pg_query($conn, "INSERT INTO public.store (store_id, store_name, store_des, store_address) VALUES ('$id','$name','$des', '$addr')");
 					echo '<meta http-equiv="refresh" content="0;URL=?page=store_management" />';
 				}
 				else

@@ -42,13 +42,13 @@ if(isset($_POST['btnRegister'])){
         include_once("connection.php");
         $pass = md5($pass1);
         $sq = "SELECT * FROM public.useraccount WHERE username='$us' OR email='$email'";
-        $res = mysqli_query($conn,$sq);
-        if(mysqli_num_rows($res)==0)
+        $res = pg_query($conn,$sq);
+        if(pg_num_rows($res)==0)
         {
-            mysqli_query($conn, "INSERT INTO public.useraccount (username, password, fullname, gender, address,phone,
+            pg_query($conn, "INSERT INTO public.useraccount (username, password, fullname, gender, address,phone,
             email, state)
             VALUES ('$us', '$pass', '$fullname', $sex, '$address', '$tel', '$email',
-            0)") or die(mysqli_error($conn));
+            0)") or die(pg_error($conn));
             echo "You have registered successfully";
         }
         else{

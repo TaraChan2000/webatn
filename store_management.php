@@ -28,7 +28,7 @@
         if(isset($_GET["function"])=='del'){
             if(isset($_GET["id"])){
                 $id=$_GET["id"];
-                mysqli_query($conn,"delete from store where store_id='$id'");
+                pg_query($conn,"delete from store where store_id='$id'");
             }
         }
         ?>
@@ -53,8 +53,8 @@
 			<tbody>
             <?php
             $No=1;
-            $result=mysqli_query($conn,"Select * from public.store");
-            while($row=mysqli_fetch_array($result,MYSQLI_ASSOC))
+            $result=pg_query($conn,"Select * from public.store");
+            while($row=pg_fetch_array($result,NULL,PGSQL_ASSOC))
             {
             ?>
 			<tr>

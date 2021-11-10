@@ -5,10 +5,10 @@
 include_once("connection.php");
 function bind_Category_List($conn){
 	$sqlstring="select cat_id, categoryname from public.category";
-	$result=mysqli_query($conn,$sqlstring);
+	$result=pg_query($conn,$sqlstring);
 	echo "<select name='CategoryList' class='form-control'>
 		<option value='0'>Choose category</option>";
-		while($row= mysqli_fetch_array($result,MYSQLI_ASSOC)){
+		while($row= pg_fetch_array($result,NULL,PGSQL_ASSOC)){
 			echo "<option value='".$row['cat_id']."'>".$row['categoryname']."</option>";
 		} 
 		echo "</select>";
@@ -18,10 +18,10 @@ function bind_Category_List($conn){
 include_once("connection.php");
 function bind_Store_List($conn){
 	$sqlstring="select store_id, store_name from public.store";
-	$result=mysqli_query($conn,$sqlstring);
+	$result=pg_query($conn,$sqlstring);
 	echo "<select name='StoreList' class='form-control'>
 		<option value='0'>Choose store</option>";
-		while($row= mysqli_fetch_array($result,MYSQLI_ASSOC)){
+		while($row= pg_fetch_array($result,NULL,PGSQL_ASSOC)){
 			echo "<option value='".$row['store_id']."'>".$row['store_name']."</option>";
 		} 
 		echo "</select>";
@@ -65,15 +65,15 @@ if(isset($_POST["btnAdd"]))
 		if($pic['size']<614400)
 		{
 			$sq="select * from public.product where pro_id='$id' or productname='$proname'";
-			$result=mysqli_query($conn,$sq);
-			if(mysqli_num_rows($result)==0)
+			$result=pg_query($conn,$sq);
+			if(pg_num_rows($result)==0)
 			{
 				copy($pic['tmp_name'],"product/".$pic['name']);
 				$filePic=$pic['name'];
 				$sqlstring="Insert into public.product(
 					pro_id, store_id, cat_id, productname, price, pro_image, quantity, description) 
 					values ('$id','$store', '$category', '$proname', '$price', '$filePic', '$qty', '$description')";
-					mysqli_query($conn,$sqlstring) or die(mysqli_error($conn));
+					pg_query($conn,$sqlstring) or die(pg_error($conn));
 					echo '<meta http-equiv="refresh" content="0;URL=?page=product_management"/>';
 			}
 			else{
