@@ -19,11 +19,11 @@
 	<meta charset="utf-8" />
 	<link rel="stylesheet" href="css/bootstrap.min.css">
    <?php
-    include_once("Connection.php");
+    include_once("connection.php");
 	if(isset($_GET["id"]))
 	        {
 	            $id = $_GET["id"];
-		        $result = mysqli_query($conn, "SELECT * FROM category WHERE cat_id='$id'");
+		        $result = mysqli_query($conn, "SELECT * FROM public.category WHERE cat_id='$id'");
 	        	$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 	        	$cat_id = $row['cat_id'];
 		        $cat_name = $row['categoryname'];
@@ -87,11 +87,11 @@
 		   }
 		   else
 		   {
-			   $sq="Select * from category where cat_id != '$id' and categoryname='$name'";
+			   $sq="Select * from public.category where cat_id != '$id' and categoryname='$name'";
 			   $result = mysqli_query($conn, $sq);
 			   if(mysqli_num_rows($result)==0)
 			   {
-				   mysqli_query($conn, "Update category SET categoryname = '$name', cat_des='$des' WHERE cat_id='$id'");
+				   mysqli_query($conn, "Update public.category SET categoryname = '$name', cat_des='$des' WHERE cat_id='$id'");
 				   echo '<meta http-equiv="refresh" content="0; URL=?page=category_management"/>';
 			   }
 			   else

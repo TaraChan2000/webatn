@@ -24,7 +24,7 @@
         {
             include_once("connection.php");
             $pass = md5($pa);
-            $res = mysqli_query($conn, "SELECT username, password, state FROM useraccount WHERE username='$us' AND password='$pass'")
+            $res = mysqli_query($conn, "SELECT username, password, state FROM public.useraccount WHERE username='$us' AND password='$pass'")
                     or die(mysqli_error($conn));
             $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
             if(mysqli_num_rows($res)==1)

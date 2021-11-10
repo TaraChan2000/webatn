@@ -70,7 +70,7 @@ function showDivs(n) {
                         <!--Load san pham tu DB -->
                            <?php
 						  // 	include_once("database.php");
-		  				   	$result = mysqli_query($conn, "SELECT * FROM product WHERE cat_id='U01'" );
+		  				   	$result = mysqli_query($conn, "SELECT * FROM public.product WHERE cat_id='U01'" );
 			
 			                if (!$result) { //add this check.
                                 die('Invalid query: ' . mysqli_error($conn));
@@ -110,7 +110,7 @@ function showDivs(n) {
                         <!--Load san pham tu DB -->
                            <?php
 						  // 	include_once("database.php");
-		  				   	$result = mysqli_query($conn, "SELECT * FROM product WHERE cat_id='MT01'" );			
+		  				   	$result = mysqli_query($conn, "SELECT * FROM public.product WHERE cat_id='MT01'" );			
 			                if (!$result) { //add this check.
                                 die('Invalid query: ' . mysqli_error($conn));
                             }
@@ -149,7 +149,7 @@ function showDivs(n) {
                         <!--Load san pham tu DB -->
                            <?php
 						  // 	include_once("database.php");
-		  				   	$result = mysqli_query($conn, "SELECT * FROM product WHERE cat_id='MTS01'" );
+		  				   	$result = mysqli_query($conn, "SELECT * FROM public.product WHERE cat_id='MTS01'" );
 			
 			                if (!$result) { //add this check.
                                 die('Invalid query: ' . mysqli_error($conn));

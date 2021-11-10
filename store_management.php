@@ -53,7 +53,7 @@
 			<tbody>
             <?php
             $No=1;
-            $result=mysqli_query($conn,"Select * from store");
+            $result=mysqli_query($conn,"Select * from public.store");
             while($row=mysqli_fetch_array($result,MYSQLI_ASSOC))
             {
             ?>

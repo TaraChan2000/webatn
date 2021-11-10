@@ -28,7 +28,7 @@
         if(isset($_GET["function"])=='del'){
             if(isset($_GET["id"])){
                 $id=$_GET["id"];
-                mysqli_query($conn,"delete from category where cat_id='$id'");
+                mysqli_query($conn,"delete from public.category where cat_id='$id'");
             }
         }
         ?>
@@ -52,7 +52,7 @@
 			<tbody>
             <?php
             $No=1;
-            $result=mysqli_query($conn,"Select * from category");
+            $result=mysqli_query($conn,"Select * from public.category");
             while($row=mysqli_fetch_array($result,MYSQLI_ASSOC))
             {
             ?>

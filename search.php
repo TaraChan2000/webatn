@@ -8,7 +8,7 @@
 		echo "Sorry this Product doesn't exist";
 		die();
 	}else{
-		$result= mysqli_query($conn,"SELECT * from product where productname LIKE '%".$search."%'");
+		$result= mysqli_query($conn,"SELECT * from public.product where productname LIKE '%".$search."%'");
 	if(mysqli_num_rows($result) ==0){
 		echo "Sorry this Product doesn't exist";
 	}

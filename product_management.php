@@ -50,17 +50,17 @@
                 if(isset($_GET["function"])=="del"){
                     if(isset($_GET["id"])){
                         $id = $_GET["id"];
-                        $sq = "select pro_image from product where pro_id='$id'";
+                        $sq = "select pro_image from public.product where pro_id='$id'";
                         $res = mysqli_query($conn, $sq);
                         $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
                         $filePic = $row['pro_image'];
                         unlink("product/".$filePic);
-                        mysqli_query($conn, "Delete From product where pro_id='$id'");
+                        mysqli_query($conn, "Delete From public.product where pro_id='$id'");
                     }
                 }
 
                 $No=1;
-                $result = mysqli_query($conn, "Select * from product a, category b, store c where a.cat_id = b.cat_id && a.store_id = c.store_id");
+                $result = mysqli_query($conn, "Select * from public.product a, public.category b, public.store c where a.cat_id = b.cat_id && a.store_id = c.store_id");
                 while($row=mysqli_fetch_array($result, MYSQLI_ASSOC)){
                     ?>
                 			

@@ -19,11 +19,11 @@
 	<meta charset="utf-8" />
 	<link rel="stylesheet" href="css/bootstrap.min.css">
    <?php
-    include_once("Connection.php");
+    include_once("connection.php");
 	if(isset($_GET["id"]))
 	        {
 	            $id = $_GET["id"];
-		        $result = mysqli_query($conn, "SELECT * FROM store WHERE store_id='$id'");
+		        $result = mysqli_query($conn, "SELECT * FROM public.store WHERE store_id='$id'");
 	        	$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 	        	$cat_id = $row['store_id'];
 		        $cat_name = $row['store_name'];
@@ -96,11 +96,11 @@
 		   }
 		   else
 		   {
-			   $sq="Select * from store where store_id != '$id' and store_name='$name'";
+			   $sq="Select * from public.store where store_id != '$id' and store_name='$name'";
 			   $result = mysqli_query($conn, $sq);
 			   if(mysqli_num_rows($result)==0)
 			   {
-				   mysqli_query($conn, "Update store SET store_name = '$name', store_des='$des' WHERE store_id='$id'");
+				   mysqli_query($conn, "Update public.store SET store_name = '$name', store_des='$des' WHERE store_id='$id'");
 				   echo '<meta http-equiv="refresh" content="0; URL=?page=store_management"/>';
 			   }
 			   else

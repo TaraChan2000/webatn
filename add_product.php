@@ -4,7 +4,7 @@
 <?php
 include_once("connection.php");
 function bind_Category_List($conn){
-	$sqlstring="select cat_id, categoryname from category";
+	$sqlstring="select cat_id, categoryname from public.category";
 	$result=mysqli_query($conn,$sqlstring);
 	echo "<select name='CategoryList' class='form-control'>
 		<option value='0'>Choose category</option>";
@@ -17,7 +17,7 @@ function bind_Category_List($conn){
 <?php
 include_once("connection.php");
 function bind_Store_List($conn){
-	$sqlstring="select store_id, store_name from store";
+	$sqlstring="select store_id, store_name from public.store";
 	$result=mysqli_query($conn,$sqlstring);
 	echo "<select name='StoreList' class='form-control'>
 		<option value='0'>Choose store</option>";
@@ -64,13 +64,13 @@ if(isset($_POST["btnAdd"]))
 		{
 		if($pic['size']<614400)
 		{
-			$sq="select * from product where pro_id='$id' or productname='$proname'";
+			$sq="select * from public.product where pro_id='$id' or productname='$proname'";
 			$result=mysqli_query($conn,$sq);
 			if(mysqli_num_rows($result)==0)
 			{
 				copy($pic['tmp_name'],"product/".$pic['name']);
 				$filePic=$pic['name'];
-				$sqlstring="Insert into product(
+				$sqlstring="Insert into public.product(
 					pro_id, store_id, cat_id, productname, price, pro_image, quantity, description) 
 					values ('$id','$store', '$category', '$proname', '$price', '$filePic', '$qty', '$description')";
 					mysqli_query($conn,$sqlstring) or die(mysqli_error($conn));

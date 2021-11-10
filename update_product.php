@@ -8,7 +8,7 @@ if(isset($_SESSION['admin']) && $_SESSION['admin']==1)
 <?php
 	include_once("connection.php");
 	function bind_Category_List($conn,$selectedValue){
-		$sqlstring="SELECT cat_id, categoryname from category";
+		$sqlstring="SELECT cat_id, categoryname from public.category";
 		$result=mysqli_query($conn,$sqlstring);
 		echo"<Select name='CategoryList' class='form-control'>
 			<option value='0'>Choose category</option>";
@@ -23,7 +23,7 @@ if(isset($_SESSION['admin']) && $_SESSION['admin']==1)
 	echo"</select>";
 	}
 	function bind_Store_List($conn,$selectedValue){
-		$sqlstring="SELECT store_id, store_name from store";
+		$sqlstring="SELECT store_id, store_name from public.store";
 		$result=mysqli_query($conn,$sqlstring);
 		echo"<Select name='StoreList' class='form-control'>
 			<option value='0'>Choose store</option>";
@@ -40,7 +40,7 @@ if(isset($_SESSION['admin']) && $_SESSION['admin']==1)
 	if(isset($_GET["id"])){
 		$id=$_GET["id"];
 		$sqlstring="SELECT store_id, cat_id, productname, price, pro_image, quantity, description,
-		from product where pro_id='$id'";
+		from public.product where pro_id='$id'";
 		$result = mysqli_query($conn,$sqlstring);
 		$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
         $storeid=$row["store_id"];
@@ -159,13 +159,13 @@ if(isset($_SESSION['admin']) && $_SESSION['admin']==1)
 			    if($pic['type']=="image/jpg" || $pic['type']=="image/jpeg" ||$pic['type']=="image/png"
 			        ||$pic['type']=="image/gif"){
 				    if($pic['size']<= 614400){
-                        $sq="SELECT * from product where pro_id != '$id' or productname='$proname'";
+                        $sq="SELECT * from public.product where pro_id != '$id' or productname='$proname'";
 					    $result=mysqli_query($conn,$sq);
 					    if(mysqli_num_rows($result)==0)
                         {
 						        copy($pic['tmp_name'], "product/".$pic['name']);
 						        $filePic = $pic['name'];
-						        $sqlstring="UPDATE product set store_id = '$store', cat_id = '$category', productname = '$proname', 
+						        $sqlstring="UPDATE public.product set store_id = '$store', cat_id = '$category', productname = '$proname', 
                                 price = '$price', pro_image = '$filePic', quantity = '$qty', description = '$description'
 						        WHERE pro_id='$id'";
 						        mysqli_query($conn,$sqlstring);
@@ -185,10 +185,10 @@ if(isset($_SESSION['admin']) && $_SESSION['admin']==1)
 			        }		
 		    }
 		    else{
-				$sq="SELECT * from product where pro_id != '$id' and productname='$proname'";
+				$sq="SELECT * from public.product where pro_id != '$id' and productname='$proname'";
 				$result=mysqli_query($conn,$sq);
 				if(mysqli_num_rows($result)==0){
-					$sqlstring="UPDATE product set 
+					$sqlstring="UPDATE public.product set 
                     store_id = '$store', cat_id = '$category', productname = '$proname', 
                     price = '$price', pro_image = '$filePic', quantity = '$qty', description = '$description'
 			        WHERE pro_id='$id'";
