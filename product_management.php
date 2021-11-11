@@ -60,7 +60,7 @@
                 }
 
                 $No=1;
-                $result = pg_query($conn, "Select * from public.product a, public.category b, public.store c join a.cat_id = b.cat_id && a.store_id = c.store_id");
+                $result = pg_query($conn, "Select * from public.product");
                 while($row=pg_fetch_array($result, NULL,PGSQL_ASSOC)){
                     ?>
                 			
@@ -71,8 +71,8 @@
               <td><?php echo $row["price"]; ?></td>
               <td><?php echo $row["description"]; ?></td>
               <td ><?php echo $row["quantity"]; ?></td>
-              <td><?php echo $row["categoryname"]; ?></td>
-              <td><?php echo $row["store_name"]; ?></td>
+              <td><?php echo $row["cat_id"]; ?></td>
+              <td><?php echo $row["store_id"]; ?></td>
              <td align='center' class='cotNutChucNang'>
                 <img src='product/<?php echo $row['pro_image'] ?>' border='0' width="50" height="50"/></td>
              <td align='center' class='cotNutChucNang'><a href="?page=update_product&&function=del&&id=<?php echo $row["pro_id"];?>"><img src='images1/edit.png' border='0'/></a></td>
