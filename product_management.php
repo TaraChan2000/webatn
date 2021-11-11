@@ -60,7 +60,7 @@
                 }
 
                 $No=1;
-                $result = pg_query($conn, "Select * from public.product a, public.category b, public.store c where a.cat_id = b.cat_id && a.store_id = c.store_id");
+                $result = pg_query($conn, "Select * from public.product a, public.category b, public.store c join a.cat_id = b.cat_id && a.store_id = c.store_id");
                 while($row=pg_fetch_array($result, NULL,PGSQL_ASSOC)){
                     ?>
                 			
